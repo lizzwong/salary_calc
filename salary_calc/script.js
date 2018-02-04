@@ -53,12 +53,12 @@ for (var i=0; i<allEmployees.length; i++){
 function monthlyCost(employees){
   console.log('in monthlycost');
 //empty array of employee's salaries
-var employeeSalaries = [];
+var arrayOfSalaries = [];
 
 for(var i=0; i<employees.length; i++){
-employeeSalaries.push(employees[ i ].salary);
+arrayOfSalaries.push(employees[ i ].salary);
 }
-return employeeSalaries;
+return arrayOfSalaries;
 }//end salary array
 
 function emptyInputs(){
