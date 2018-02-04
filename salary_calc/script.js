@@ -18,7 +18,11 @@ $( '#submitEmployee' ).on( 'click', function(){
   displayAllEmployees();
 
   emptyInputs();
-}
+
+  monthlyCost();
+}//end submitEmployee button function
+
+
 );
 }); //end document load function.
 
@@ -29,6 +33,7 @@ console.log('in displayAllEmployees');
 var employeeList = $( '#listOfEmployees' );
 //empty ul
 employeeList.empty();
+
 for (var i=0; i<allEmployees.length; i++){
 //append each employee to ul element
     var stringToAppend = '<li>';
@@ -37,12 +42,27 @@ for (var i=0; i<allEmployees.length; i++){
         stringToAppend += allEmployees[ i ].idNumber + ' ';
         stringToAppend += allEmployees[ i ].jobTitle + ' ';
         stringToAppend += allEmployees[ i ].salary;
+        stringToAppend +=' <button class="removeEmployee">Remove Employee</button>';
         stringToAppend += '</li>';
       employeeList.append(stringToAppend);
-      }
+    }//end employees on dom
+
+
 }//end displayAllEmployees function
 
+function monthlyCost(){
+  console.log('in monthlycost');
+  var employeeSalaries = $( '#listOfEmployees' );
+
+  for (var i=0; i<allEmployees.length; i++){
+    employeeSalaries.push(allEmployees[ i ].salary);
+
+    return(employeeSalaries);
+  }//end salary array
+}
+
 function emptyInputs(){
+  console.log('in emptyInputs');
   $( '#firstNameIn' ).val( '' );
   $( '#lastNameIn' ).val( '' );
   $( '#idNumberIn' ).val( '' );

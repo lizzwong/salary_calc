@@ -6,14 +6,19 @@ body{
 
 h1{
 border-bottom: 25px;
-color: indigo;
+color: #1E184B;
 font-family: palatino;
 font-size:40px;
+}
 
+h2{
+color: #1E184B;
+font-family: palatino;
+font-size: 20px;
 }
 
 ul{
-margin: 2%  
+margin: 2%
 }
 
 li{
