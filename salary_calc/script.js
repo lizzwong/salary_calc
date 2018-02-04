@@ -19,7 +19,7 @@ $( '#submitEmployee' ).on( 'click', function(){
 
   emptyInputs();
 
-  monthlyCost();
+  monthlyCost(allEmployees);
 }//end submitEmployee button function
 
 
@@ -50,16 +50,16 @@ for (var i=0; i<allEmployees.length; i++){
 
 }//end displayAllEmployees function
 
-function monthlyCost(){
+function monthlyCost(employees){
   console.log('in monthlycost');
-  var employeeSalaries = $( '#listOfEmployees' );
+//empty array of employee's salaries
+var employeeSalaries = [];
 
-  for (var i=0; i<allEmployees.length; i++){
-    employeeSalaries.push(allEmployees[ i ].salary);
-
-    return(employeeSalaries);
-  }//end salary array
+for(var i=0; i<employees.length; i++){
+employeeSalaries.push(employees[ i ].salary);
 }
+return employeeSalaries;
+}//end salary array
 
 function emptyInputs(){
   console.log('in emptyInputs');
