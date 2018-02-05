@@ -14,11 +14,14 @@ border-bottom: 25px;
 color: #1E184B;
 font-family: palatino;
 font-size:40px;
+font-weight: bold;
 }
 
 h2{
 color: #1E184B;
-font-family: palatino;
+font-family: bookman
+font-size: 22px;
+font-weight:600;
 font-size: 20px;
 }
 
@@ -33,8 +36,12 @@ font-family:palatino;
 }
 
 .employeeInfo{
-  font-size: 12px;
+  font-size: 13px;
+  font-family: bookman;
+  font-weight:600;
+  color: black;
   border-radius: 5px;
-  background-color: lavender;
+  background-color: #F6ECFF;
+  width: 16%
 
 }
