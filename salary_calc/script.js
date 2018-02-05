@@ -17,10 +17,9 @@ $( '#submitEmployee' ).on( 'click', function(){
   allEmployees.push(newEmployee);
   //display allEmployees
   displayAllEmployees();
-  monthlyCost(allEmployees);
-  averageMonth(monthlyCost(allEmployees));
+  displayMonthlyTotal();
   emptyInputs();
-
+  console.log(averageMonth(totalAnnualCost(allEmployees)));
 });//end submitEmployee button function
 
 $( '#listOfEmployees' ).on( 'click', '.removeEmployee', function(){
@@ -56,8 +55,8 @@ for (var i=0; i<allEmployees.length; i++){
 
 }//end displayAllEmployees function
 
-function monthlyCost(employees){
-  console.log('in monthlycost');
+function totalAnnualCost(employees){
+  console.log('in totalAnnualCost');
 //empty array of employee's salaries
 var listOfSalaries = [];
 for(var i=0; i<employees.length; i++){
@@ -75,10 +74,19 @@ for ( var i = 0; i < cost.length; i++ ){
 costPerMonth = (totalCost/12);
 
 return costPerMonth;
-
-
-
 }//end average of all salaries
+
+function displayMonthlyTotal(){
+  console.log( 'in displayAllEmployees' );
+
+var monthCost = $( '#putMonthCostHere' );
+    monthCost.empty();
+
+var costToAppend = '<li>';
+    costToAppend += ('$' + averageMonth(totalAnnualCost(allEmployees)));
+    costToAppend += '</li>';
+    monthCost.append( costToAppend );
+}
 
 function emptyInputs(){
   console.log('in emptyInputs');
