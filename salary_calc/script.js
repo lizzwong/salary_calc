@@ -27,6 +27,7 @@ var employee = $(this).data( 'id' );
 var deletedEmployee = allEmployees.splice( employee, 1 );
 console.log( deletedEmployee[0] );
 displayAllEmployees();
+displayMonthlyTotal();
 });//removeEmployee button
 
 }); //end document load function.
